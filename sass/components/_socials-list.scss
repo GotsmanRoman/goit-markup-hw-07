@@ -1,0 +1,40 @@
+@use "../utils/variables" as *;
+
+.socials-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding: 0 32px 30px 32px;
+  }
+  .socials-list__item {
+  }
+  .socials-list__link {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 50%;
+    border: none;
+  
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .socials-list__link:hover {
+    background-color: $blue-color;
+  }
+  .socials-list__link:hover .socials-list__icon {
+    fill: $white-color;
+  }
+  .socials-list__link:focus {
+    background-color: $blue-color;
+    outline: none;
+  }
+  .socials-list__link:focus .socials-list__icon {
+    fill: $white-color;
+  }
+  .socials-list__icon {
+    fill: $basic-icon-color;
+  
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
