@@ -14,8 +14,8 @@
     />
   </head>
   <body>
-    <div class="backdrop backdrop--hidden" data-modal>
-      <div class="modal">
+    <div class="backdrop backdrop--hidden" data-backdrop>
+      <div class="modal modal--hidden" data-modal>
         <div class="modal-close" data-modal-close>
           <svg width="11" height="11" class="modal-close__icon">
             <use href="images/sprite.svg#icon-close"></use>
@@ -68,11 +68,13 @@
                   name="policy"
                   class="modal-list__input modal-list__input--checkbox"
                 />
-                <span class="modal-list__placeholder"></span>
+                <span
+                  class="modal-list__placeholder modal-list__placeholder--checkbox"
+                ></span>
                 <svg
                   width="16"
                   height="15"
-                  class="modal-list__icon modal-list__icon--checked-yes"
+                  class="modal-list__icon modal-list__icon--checked"
                 >
                   <use href="images/sprite.svg#icon-checked-yes"></use>
                 </svg>
@@ -92,43 +94,42 @@
         </form>
       </div>
     </div>
-    <header class="header-section">
+
+    <header class="header-section header-section--page">
       <div class="container">
         <div class="header">
           <a href="./index.html" class="logo">
             Web<span class="logo__text logo__text--header">Studio</span>
           </a>
-          <nav class="nav-section">
-            <ul class="header-nav">
-              <li class="header-nav__item">
+          <nav class="nav-container">
+            <ul class="nav-list">
+              <li class="nav-list__item">
                 <a
                   href="./index.html"
-                  class="header-nav__link header-nav__link--active"
+                  class="nav-list__link nav-list__link--active"
                   >Студія</a
                 >
               </li>
-              <li class="header-nav__item">
-                <a href="./portfolio.html" class="header-nav__link"
-                  >Портфоліо</a
-                >
+              <li class="nav-list__item">
+                <a href="./portfolio.html" class="nav-list__link">Портфоліо</a>
               </li>
-              <li class="header-nav__item">
-                <a href="#" class="header-nav__link">Контакти</a>
+              <li class="nav-list__item">
+                <a href="#" class="nav-list__link">Контакти</a>
               </li>
             </ul>
           </nav>
-          <ul class="header-contacts">
-            <li class="header-contacts__item">
-              <a href="mailto:info@devstudio.com" class="header-contacts__link">
-                <svg width="16" height="12" class="header-contacts__icon">
+          <ul class="contacts-list">
+            <li class="contacts-list__item contacts-list__item--header">
+              <a href="mailto:info@devstudio.com" class="contacts-list__link">
+                <svg width="16" height="12" class="contacts-list__icon">
                   <use href="images/sprite.svg#icon-envelope"></use>
                 </svg>
                 info@devstudio.com
               </a>
             </li>
-            <li class="header-contacts__item">
-              <a href="tel:+380961111111" class="header-contacts__link">
-                <svg width="10" height="16" class="header-contacts__icon">
+            <li class="contacts-list__item contacts-list__item--header">
+              <a href="tel:+380961111111" class="contacts-list__link">
+                <svg width="10" height="16" class="contacts-list__icon">
                   <use href="images/sprite.svg#icon-smartphone"></use>
                 </svg>
                 +38 096 111 11 11
@@ -143,7 +144,7 @@
       <section class="section section--hero">
         <div class="hero">
           <h1 class="hero__text">ЕФЕКТИВНІ РІШЕННЯ ДЛЯ ВАШОГО БІЗНЕСУ</h1>
-          <button type="button" class="hero__btn" data-modal-open>
+          <button type="button" class="button button--hero" data-modal-open>
             Замовити послугу
           </button>
         </div>
@@ -493,26 +494,30 @@
               Web<span class="logo__text logo__text--footer">Studio</span>
             </a>
             <address>
-              <ul class="footer-address__list">
-                <li class="footer-address__item">
+              <ul class="contacts-list contacts-list--footer">
+                <li class="contacts-list__item contacts-list__item--footer">
                   <a
-                    class="footer-address__link footer-address__link--city"
-                    href="https://goo.gl/maps/3ZXyzKHYZNvMM94u7"
+                    href="mailto:info@devstudio.com"
+                    class="contacts-list__link contacts-list__link--footer contacts-list__link--accent"
                   >
                     м. Київ, пр-т Лесі Українки, 26
                   </a>
                 </li>
-                <li class="footer-address__item">
+                <li class="contacts-list__item contacts-list__item--footer">
                   <a
-                    class="footer-address__link"
                     href="mailto:info@devstudio.com"
-                    >info@devstudio.com</a
+                    class="contacts-list__link contacts-list__link--footer"
                   >
+                    info@devstudio.com
+                  </a>
                 </li>
-                <li class="footer-address__item">
-                  <a class="footer-address__link" href="tel:+380961111111"
-                    >+38 096 111 11 11</a
+                <li class="contacts-list__item contacts-list__item--footer">
+                  <a
+                    href="tel:+380961111111"
+                    class="contacts-list__link contacts-list__link--footer"
                   >
+                    +38 096 111 11 11
+                  </a>
                 </li>
               </ul>
             </address>

@@ -2,6 +2,7 @@
     const refs = {
       openModalBtn: document.querySelector("[data-modal-open]"),
       closeModalBtn: document.querySelector("[data-modal-close]"),
+      backdrop: document.querySelector("[data-backdrop]"),
       modal: document.querySelector("[data-modal]"),
     };
   
@@ -9,6 +10,7 @@
     refs.closeModalBtn.addEventListener("click", toggleModal);
   
     function toggleModal() {
-      refs.modal.classList.toggle("backdrop--hidden");
+      refs.backdrop.classList.toggle("backdrop--hidden");
+      refs.modal.classList.toggle("modal--hidden");
     }
   })();
