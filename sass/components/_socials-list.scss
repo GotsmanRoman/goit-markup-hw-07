@@ -21,14 +21,14 @@
   &__link:hover {
     background-color: $blue-color;
   }
-  &__link:hover .socials-list__icon {
+  &__link:hover &__icon {
     fill: $white-color;
   }
   &__link:focus {
     background-color: $blue-color;
     outline: none;
   }
-  &__link:focus .socials-list__icon {
+  &__link:focus &__icon {
     fill: $white-color;
   }
   &__icon {
@@ -42,14 +42,14 @@
   &__icon--footer {
     fill: $white-color;
   }
-  }
-  .socials-list--footer {
+}
+.socials-list--footer {
   display: flex;
   width: 206px;
   padding: 0;
   margin-top: 20px;
-  }
-  .social-block {
+}
+.social-block {
   margin-top: 12px;
   margin-left: 70px;
 
