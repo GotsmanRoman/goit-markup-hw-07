@@ -7,6 +7,7 @@
   margin-left: 93px;
   margin-top: 12px;
 
+
   &__header {
     text-transform: uppercase;
     font-size: 14px;
@@ -21,6 +22,7 @@
   flex-direction: row;
   margin-top: 20px;
   height: 50px;
+
 
   &__input {
     width: 358px;
@@ -39,9 +41,11 @@
     background-color: transparent;
 
     @include transition(border-color);
-  }
-  &__input:hover,
-  &__input:focus {
-    border-color: $blue-color;
+
+
+    &:hover,
+    &:focus {
+      border-color: $blue-color;
+    }
   }
 }

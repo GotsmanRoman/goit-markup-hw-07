@@ -5,6 +5,7 @@
   margin-top: 50px;
   justify-content: space-between;
 
+
   &__link {
     display: flex;
     width: 170px;
@@ -16,23 +17,25 @@
     border: 1px solid $basic-icon-color;
 
     @include transition(border-color);
-  }
-  &__link:hover {
-    border-color: $blue-color;
-  }
-  &__link:focus {
-    border-color: $blue-color;
-    outline: none;
+
+    &:hover {
+      border-color: $blue-color;
+    }
+    &:focus {
+      border-color: $blue-color;
+      outline: none;
+    }
   }
   &__icon {
     fill: $basic-icon-color;
 
     @include transition(fill);
-  }
-  &__link:hover &__icon {
-    fill: $blue-color;
-  }
-  &__link:focus &__icon {
-    fill: $blue-color;
+
+    .clients-list__link:hover & {
+      fill: $blue-color;
+    }
+    .clients-list__link:focus & {
+      fill: $blue-color;
+    }
   }
 }

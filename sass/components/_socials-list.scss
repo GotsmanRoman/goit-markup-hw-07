@@ -6,6 +6,12 @@
   margin-top: 16px;
   padding: 0 32px 30px 32px;
 
+  &--footer {
+    display: flex;
+    width: 206px;
+    padding: 0;
+    margin-top: 20px;
+    }
   &__link {
     display: flex;
     height: 44px;
@@ -17,37 +23,34 @@
     border: none;
 
     @include transition(background-color);
-  }
-  &__link:hover {
-    background-color: $blue-color;
-  }
-  &__link:hover &__icon {
-    fill: $white-color;
-  }
-  &__link:focus {
-    background-color: $blue-color;
-    outline: none;
-  }
-  &__link:focus &__icon {
-    fill: $white-color;
+
+    &:hover {
+      background-color: $blue-color;
+    }
+    &:focus {
+      background-color: $blue-color;
+      outline: none;
+    }
+    &--footer {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
   &__icon {
     fill: $basic-icon-color;
 
     @include transition(fill);
+
+
+    .socials-list__link:hover & {
+      fill: $white-color;
+    }
+    .socials-list__link:focus & {
+      fill: $white-color;
+    }
+    &--footer {
+      fill: $white-color;
+    }
   }
-  &__link--footer {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  &__icon--footer {
-    fill: $white-color;
-  }
-}
-.socials-list--footer {
-  display: flex;
-  width: 206px;
-  padding: 0;
-  margin-top: 20px;
 }
 .social-block {
   margin-top: 12px;

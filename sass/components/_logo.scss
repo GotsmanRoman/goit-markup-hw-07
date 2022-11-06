@@ -8,10 +8,13 @@
   letter-spacing: 0.03em;
   color: $blue-color;
   
-  &__text--header {
-    color: #000000;
-  }
-  &__text--footer {
-    color: $white-color;
+
+  &__text{
+    &--header {
+      color: #000000;
+    }
+    &--footer {
+      color: $white-color;
+    }
   }
 }

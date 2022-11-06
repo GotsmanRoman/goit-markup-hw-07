@@ -21,13 +21,15 @@
 
   @include transition(background-color);
 
+
   &:hover {
     background-color: $button-hover-color;
   }
-
-  &__icon--footer {
-    margin-left: 10px;
-    fill: $white-color;
+  &__icon {
+    &--footer {
+      margin-left: 10px;
+      fill: $white-color;
+    }
   }
   &--subscription {
     margin-left: 12px;

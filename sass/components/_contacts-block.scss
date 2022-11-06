@@ -8,12 +8,23 @@
   line-height: 1.14;
   letter-spacing: 0.02em;
 
+  
+  &--footer {
+    flex-direction: column;
+    display: flex;
+    margin-top: 20px;
+  }
   &__item {
     display: flex;
     align-items: center;
-  }
-  &__item--header:not(:last-child) {
-    margin-right: 50px;
+
+    &--header:not(:last-child) {
+      margin-right: 50px;
+    }
+    &--footer {
+      margin-bottom: 9px;
+      font-style: normal;
+    }
   }
   &__link {
     display: flex;
@@ -22,12 +33,13 @@
     color: $grey-color;
 
     @include transition(color);
-  }
-  &__link:hover {
-    color: $blue-color;
-  }
-  &__link:focus {
-    color: $blue-color;
+
+    &:hover {
+      color: $blue-color;
+    }
+    &:focus {
+      color: $blue-color;
+    }
   }
   &__icon {
     margin-right: 10px;
@@ -35,24 +47,16 @@
     fill: $grey-color;
 
     @include transition(fill);
-  }
-  &__link:hover &__icon {
-    fill: currentColor;
-  }
-  &__link:focus &__icon {
-    fill: $blue-color;;
+
+    .contacts-list__link:hover & {
+      fill: $blue-color;
+    }
+    .contacts-list__link:focus & {
+      fill: $blue-color;
+    }
   }
 
 
-  &--footer {
-    flex-direction: column;
-    display: flex;
-    margin-top: 20px;
-  }
-  &__item--footer {
-    margin-bottom: 9px;
-    font-style: normal;
-  }
   &__link--footer{
     font-weight: 400;
     font-size: 14px;

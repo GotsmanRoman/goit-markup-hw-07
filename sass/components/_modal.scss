@@ -60,6 +60,7 @@
   justify-content: center;
   align-items: center;
 
+
   &__item {
     position: relative;
     margin-bottom: 28px;
@@ -75,17 +76,23 @@
     letter-spacing: 0.01em;
 
     color: $grey-color;
-  }
-  &__placeholder--checkbox {
-    position: static;
-    display: flex;
-    width: 16px;
-    height: 15px;
 
-    border: 2px solid $black-color;
-    border-radius: 4px;
-
-    @include transition(background-color border-color);
+    &--checkbox {
+      position: static;
+      display: flex;
+      width: 16px;
+      height: 15px;
+  
+      border: 2px solid $black-color;
+      border-radius: 4px;
+  
+      @include transition(background-color border-color);
+    }
+    .modal-list__input--checkbox:checked ~ &--checkbox {
+      background-color: $blue-color;
+      border-color: $blue-color;
+      background-origin: border-box;
+    }
   }
   &__icon {
     position: absolute;
@@ -95,10 +102,26 @@
 
     transform: translateY(-50%);
     @include transition(fill);
-  }
-  &__input:hover ~ &__icon,
-  &__input:focus ~ &__icon {
-    fill: $blue-color;
+
+    .modal-list__input:hover ~ &,
+    .modal-list__input:focus ~ & {
+      fill: $blue-color;
+    }
+    &--checked {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      fill: none;
+  
+      opacity: 0;
+      transform: translateY(-50%);
+      @include transition(opacity);
+    }
+    .modal-list__input--checkbox:checked ~ &--checked {
+      fill: $white-color;
+      opacity: 1;
+    }
   }
   &__input {
     width: 448px;
@@ -109,50 +132,31 @@
     border-radius: 4px;
 
     @include transition(border-color);
-  }
-  &__input:hover,
-  &__input:focus {
-    border-color: $blue-color;
-    outline: none;
-  }
-  &__input--textarea {
-    height: 120px;
-    resize: none;
-    padding: 12px 16px;
-  }
-  &__input--textarea::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
-  }
-  &__input--checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-  }
-  &__icon--checked {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    fill: none;
 
-    opacity: 0;
-    transform: translateY(-50%);
-    @include transition(opacity);
-  }
-  &__input--checkbox:checked ~ &__icon--checked {
-    fill: $white-color;
-    opacity: 1;
-  }
-  &__input--checkbox:checked ~ &__placeholder--checkbox {
-    background-color: $blue-color;
-    border-color: $blue-color;
-    background-origin: border-box;
+    &:hover,
+    &:focus {
+      border-color: $blue-color;
+      outline: none;
+    }
+    &--textarea {
+      height: 120px;
+      resize: none;
+      padding: 12px 16px;
+    }
+    &--textarea::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.01em;
+      color: rgba(117, 117, 117, 0.5);
+    }
+    &--checkbox {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
   }
   &__text {
     margin-left: 8px;
@@ -170,11 +174,12 @@
   &__label {
     position: relative;
     display: flex;
-  }
-  &__label--policy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    &--policy {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
   .button--modal-btn {
@@ -194,10 +199,12 @@
     border-radius: 4px;
 
     @include transition(background-color);
-  }
-  .button--modal-btn:hover,
-  .button--modal-btn:focus {
-    background-color: $button-hover-color;
+
+
+    &:hover,
+    &:focus {
+      background-color: $button-hover-color;
+    }
   }
   .modal-close {
     display: flex;
@@ -214,12 +221,14 @@
     cursor: pointer;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .modal-close:hover .modal-close__icon {
-    fill: $blue-color;
-  }
-  .modal-close__icon {
-    fill: $black-color;
 
-    @include transition(fill);
+    &__icon {
+      fill: $black-color;
+
+      @include transition(fill);
+
+      .modal-close:hover & {
+        fill: $blue-color;
+      }
+    }
   }
